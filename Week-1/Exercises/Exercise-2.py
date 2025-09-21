@@ -17,7 +17,9 @@ Write a for-loop that prints out the following line 20 times:
 
 print("Exercise 2.1")
 
-pass
+for i in range(0, 20):
+  print("All work and no play makes Jack a dull boy.")
+
 
 print("---")
 """
@@ -30,7 +32,8 @@ Write a for-loop that prints out the numbers from 0 up to 5 inclusive.
 
 print("Exercise 2.2")
 
-pass
+for i in range(0,6):
+  print(i)
 
 print("---")
 
@@ -45,7 +48,11 @@ Write a for-loop that prints out the EVEN numbers from 2 up to 8 inclusive.
 
 print("Exercise 2.3")
 
-pass
+for i in range(2,9):
+  if i % 2 == 0:
+    print(i)
+  else:
+    pass
 
 print("---")
 
@@ -59,7 +66,8 @@ Now write another loop to print 9 through 0 (i.e., backwards).
 
 print("Exercise 2.4")
 
-pass
+for i in range(9, -1, -1):
+  print(i)
 
 print("---")
 
@@ -81,8 +89,9 @@ Write code that prints out the following sequence:
 
 print("Exercise 2.5")
 
-pass
-
+for i in range(1, 9):
+  print("z" * i)
+  
 print("---")
 
 """
@@ -106,7 +115,11 @@ of a simple print-statement.
 
 print("Exercise 2.6")
 
-pass
+n = 6
+for i in range(1, n):
+  for j in range(1, i+1):
+    print(j, end='')
+  print()
 
 print("---")
 
@@ -135,7 +148,14 @@ your code needs to carry out for a certain value of rows.
 print("Exercise 2.7")
 
 rows = 5
-pass
+for i in range(rows):
+  for j in range(i, rows):
+    print(' ', end='')
+  for j in range(i):
+    print('o', end='')
+  for j in range(i+1):
+    print('o', end='')
+  print()
 
 print("---")
 

@@ -25,8 +25,15 @@ def print_triangle_o(rows):
     """
     Print a centered triangle made of the letter 'o'.
     """
-    pass
-
+    for i in range(rows):
+        for j in range(i, rows):
+            print(' ', end='')
+        for j in range(i):
+            print('o', end='')
+        for j in range(i+1):
+            print('o', end='')
+        print()
+print_triangle_o(5)
 sprint("---")
 
 """
@@ -42,8 +49,12 @@ sprint("Exercise 5.2")
 
 def prod_list_easy(lst):
     """Returns the product of the elements in a number list iteratively."""
-    pass
-
+    sum_value = 0
+    for i in range(len(lst)):
+        squared_value = lst[i] * lst[i]
+        sum_value = sum_value + squared_value
+    return print(sum_value)
+prod_list_easy(lst=[1, 4, -6, 7, 2, 3, 9, 11, 6])
 sprint("---")
 
 """
@@ -63,8 +74,12 @@ sprint("Exercise 5.3")
 
 def prod_list_rec(lst):
     """Returns the product of the elements in a number list recursively."""
-    pass
+    product = 1
 
+    for i in range(len(lst)):
+        product = product * lst[i] 
+    return print(product)
+prod_list_rec(lst=[1, 4, -6, 7, 2, 3, 9, 11, 6])
 sprint("---")
 
 """
@@ -88,7 +103,15 @@ def prod_list_rec_full(lst):
     If the list contains non-numeric elements, a message is printed out
     and the function returns nothing.
     """
-    pass
+    if len(lst) == 0:
+        return 1
+
+    if type(lst[0]) != int and type(lst[0]) != float:
+        print("Error: not a number!")
+        return
+
+    return lst[0] * prod_list_rec_full(lst[1:])
+prod_list_rec_full(lst=[1, 4])
     
 sprint("---")
 
@@ -103,7 +126,7 @@ expected outputs. If you solved the exercises correctly, the script will tell yo
 ------
 """
 
-### Run test cases
+# ## Run test cases
 # if __name__ == "__main__":
 #     from testcases import (
 #         run_tests_ex51,

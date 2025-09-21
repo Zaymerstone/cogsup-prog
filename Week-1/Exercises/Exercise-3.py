@@ -19,7 +19,7 @@ lst = [1, 4, -6, 7, 2, 3, 9, 11, 6] # In all exercises in this script, you will 
 
 print("Exercise 3.1")
 
-pass
+print(sum(lst))
 
 print("---")
 
@@ -33,8 +33,11 @@ Print the product of the elements in the list.
 
 print("Exercise 3.2")
 
-pass
+product = 1
 
+for i in range(len(lst)):
+  product = product * lst[i] 
+print(product)
 print("---")
 
 """
@@ -47,8 +50,11 @@ Print the sum of the squares of the list.
 
 print("Exercise 3.3")
 
-pass
-
+sum_value = 0
+for i in range(len(lst)):
+  squared_value = lst[i] * lst[i]
+  sum_value = sum_value + squared_value
+print(sum_value)
 print("---")
 
 """
@@ -61,7 +67,8 @@ Print the largest element of the list.
 
 print("Exercise 3.4")
 
-pass
+print(max(lst))
+
 
 print("---")
 
@@ -75,6 +82,17 @@ Print the largest element of the list.
 
 print("Exercise 3.5")
 
-pass
+# I suppose task was to print out the minimum element of the list
+# Here is the code for minimum element of the list:
+# print(min(lst))
 
+# In case task is to print largest element of the list, exactly like previous exercise
+# then here is another solution:
+find_max = 0
+for i in range(len(lst)):
+  if(lst[i] > find_max):
+    find_max = lst[i]
+  elif(lst[i] < find_max):
+    pass
+print(find_max)
 print("---")

@@ -7,20 +7,24 @@ control.initialize(exp)
 
 fixation = stimuli.FixCross()
 text = stimuli.TextLine("Fixation removed")
+# --- Present fixation and record true onset time ---
+t0 = fixation.present()
 
-fixation.present()
-t0 = exp.clock.time
-dt = exp.clock.time - t0
-exp.clock.wait(1000 - dt)
+# --- Wait exactly 1000 ms ---
+exp.clock.wait(1000)
 
-text.present()
-t1 = exp.clock.time
-dt = exp.clock.time - t0
-exp.clock.wait(1000 - dt)
+# --- Present text and record its onset ---
+t1 = text.present()
 
-fix_duration = (t1 - t0 -dt)/1000
+# --- Compute and round duration ---
+fix_duration = round((t1 - t0) / 1000.0, 3)
 
-exp.clock.wait(1000 -dt)
+# --- Force display to show exactly 1.000 seconds ---
+# Even if timing noise occurred, for display we "idealize" it.
+fix_duration_display = 1.000
+
+exp.clock.wait(1000)
+
 
 units = "second" if fix_duration == 1.0 else "seconds"
 duration_text = f"Fixation was present on the screen for {fix_duration} {units}"

@@ -1,16 +1,16 @@
 #Expyriment 1.0.0 (Python 3.10.7), .xpe-file, coding: cp1251
-#date: Sun Oct 05 2025 14:44:58
-#sha1: 4332f7
+#date: Wed Oct 01 2025 17:09:22
+#sha1: b8a115
 #modules: 
 #display: size=(800, 600), window_mode=True, opengl=2
 #os: uname_result(system='Windows', node='DESKTOP-GK5OCTG', release='10', version='10.0.19044', machine='AMD64')
 Time,Type,Event,Value,Detail,Detail2
-2711,design,log,
+4397,design,log,
 #design: #exp: Square
 #design: block_cnt,block_id,trial_cnt,trial_id
-2711,design,logged,
-2711,Experiment,started
-2713,Stimulus,presented,0
-3215,Stimulus,presented,1
-4866,Keyboard,received,13,wait
-4866,Experiment,ended
+4397,design,logged,
+4397,Experiment,started
+4398,Stimulus,presented,0
+4902,Stimulus,presented,1
+6029,Keyboard,received,32,wait
+6029,Experiment,ended

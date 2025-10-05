@@ -1,0 +1,18 @@
+#Expyriment 1.0.0 (Python 3.10.7), .xpe-file, coding: cp1251
+#date: Sun Oct 05 2025 15:36:27
+#sha1: 7c85f4
+#modules: 
+#display: size=(800, 600), window_mode=True, opengl=2
+#os: uname_result(system='Windows', node='DESKTOP-GK5OCTG', release='10', version='10.0.19044', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+2955,design,log,
+#design: #exp: Ternus display
+#design: block_cnt,block_id,trial_cnt,trial_id
+2955,design,logged,
+2955,Experiment,started
+2955,stderr,received,'Exception ignored in: <function Visual.__del__ at 0x000002613F506680>'
+2955,stderr,received,'Traceback (most recent call last):'
+2955,stderr,received,'  File "C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages\\expyriment\\stimuli\\_visual.py", line 266, in __del__'
+2956,stderr,received,'    if self._compression_filename is not None:'
+2956,stderr,received,"AttributeError: 'Canvas' object has no attribute '_compression_filename'"
+2957,stderr,received,'Traceback (most recent call last):\n  File "c:\\Users\\HP\\cogSUP\\cogsup-prog\\Week-4\\Exercises\\ternus.py", line 63, in <module>\n    run_trial(radius=50, isi_frames=3, with_color_tags=False)   # element motion, low ISI\n  File "c:\\Users\\HP\\cogSUP\\cogsup-prog\\Week-4\\Exercises\\ternus.py", line 38, in run_trial\n    canvas1 = stimuli.Canvas()\nTypeError: Canvas.__init__() missing 1 required positional argument: \'size\''

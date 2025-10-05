@@ -1,10 +1,10 @@
 #Expyriment 1.0.0 (Python 3.10.7), .xpd-file, coding: cp1251
-#date: Sun Oct 05 2025 14:44:58
+#date: Sun Oct 05 2025 15:36:27
 #--EXPERIMENT INFO
-#e mainfile: square_fixation.py
-#e sha1: 4332f7
+#e mainfile: ternus.py
+#e sha1: 7c85f4
 #e modules: 
-#e Experiment: Square
+#e Experiment: Ternus display
 #e no between subject factors
 #--SUBJECT INFO
 #s id: 1

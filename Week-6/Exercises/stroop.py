@@ -4,18 +4,11 @@ import random
 
 """ Constants """
 KEYS = [K_j, K_f]
-TRIAL_TYPES =  ["match", "mismatch"]
-COLOR_MAP = {
-    "red": (255, 0, 0),
-    "blue": (0, 0, 255),
-    "green": (0, 200, 0),
-    "orange": (255, 165, 0)
-}
-
-COLORS = ["red", "blue", "green", "orange"]
+TRIAL_TYPES = ["match","mismatch"]
+COLORS = ["red","blue","green","orange"]
 
 N_BLOCKS = 2
-N_TRIALS_IN_BLOCK = 32
+N_TRIALS_IN_BLOCK = 16
 
 INSTR_START = """
 In this task, you have to indicate whether the meaning of a word and the color of its font match.
@@ -25,8 +18,8 @@ Press SPACE to continue.
 INSTR_MID = """You have finished half of the experiment, well done! Your task will be the same.\nTake a break then press SPACE to move on to the second half."""
 INSTR_END = """Well done!\nPress SPACE to quit the experiment."""
 
-FEEDBACK_CORRECT = """Correct!"""
-FEEDBACK_INCORRECT = """Incorrect! """
+FEEDBACK_CORRECT = """Correct response"""
+FEEDBACK_INCORRECT = """Incorrect response"""
 
 """ Helper functions """
 def load(stims):
@@ -62,7 +55,7 @@ control.initialize(exp)
 fixation = stimuli.FixCross()
 fixation.preload()
 
-stims = {w: {c: stimuli.TextLine(w, text_colour=COLOR_MAP[c]) for c in COLORS} for w in COLORS}
+stims = {w: {c: stimuli.TextLine(w, text_colour=c) for c in COLORS} for w in COLORS}
 load([stims[w][c] for w in COLORS for c in COLORS])
 
 feedback_correct = stimuli.TextLine(FEEDBACK_CORRECT)
@@ -70,28 +63,37 @@ feedback_incorrect = stimuli.TextLine(FEEDBACK_INCORRECT)
 load([feedback_correct, feedback_incorrect])
 
 """ Experiment """
-def run_trial(block_id, trial_id, trial_type, word, color):
-    stim = stims[word][color]
+def run_trial(block_id, trial_id, trial_type, word_key, color):
+    stim = stims[word_key][color]  # look up TextLine here
     present_for(fixation, t=500)
     stim.present()
     key, rt = exp.keyboard.wait(KEYS)
     correct = key == K_j if trial_type == "match" else key == K_f
-    exp.data.add([block_id, trial_id, trial_type, word, color, rt, correct])
+    exp.data.add([block_id, trial_id, trial_type, word_key, color, rt, correct])
     feedback = feedback_correct if correct else feedback_incorrect
     present_for(feedback, t=1000)
 
 control.start(subject_id=1)
 
 present_instructions(INSTR_START)
+
 for block_id in range(1, N_BLOCKS + 1):
     for trial_id in range(1, N_TRIALS_IN_BLOCK + 1):
         trial_type = random.choice(TRIAL_TYPES)
-        word = random.choice(COLORS)
-        color = word if trial_type == "match" else random.choice([c for c in COLORS if
-c != word])
-        run_trial(block_id, trial_id, trial_type, word, color)
+        colors = list(stims.keys())
+        color = random.choice(colors)
+
+        if trial_type == "match":
+            word_key = color                 
+        else:
+            word_key = random.choice([c for c in colors if c != color])
+
+        # pass strings; run_trial does the lookup
+        run_trial(block_id, trial_id, trial_type, word_key, color)
+
     if block_id != N_BLOCKS:
         present_instructions(INSTR_MID)
+
 present_instructions(INSTR_END)
 
 control.end()

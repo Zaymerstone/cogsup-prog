@@ -18,7 +18,7 @@ square_green.present(clear=True, update=False)
 square_red.present(clear=False, update=True)
 
 # Move red square step by step to center
-spatial_disruption = 100 # This is the gap between both squares at time of "impact"
+spatial_disruption = 0 # This is the gap between both squares at time of "impact"
 target_x_red = -50 - spatial_disruption # to account for size of green square
 target_x_green = 400 # final position of the green square
 step = 5  # pixels per frame

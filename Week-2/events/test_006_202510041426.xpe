@@ -1,0 +1,18 @@
+#Expyriment 1.0.0 (Python 3.10.7), .xpe-file, coding: cp1251
+#date: Sat Oct 04 2025 14:26:08
+#sha1: 200467
+#modules: 
+#display: size=(800, 600), window_mode=False, opengl=2
+#os: uname_result(system='Windows', node='DESKTOP-GK5OCTG', release='10', version='10.0.19044', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+11719,design,log,
+#design: #exp: Buffer Demo with Colors - Fixed
+#design: block_cnt,block_id,trial_cnt,trial_id
+11719,design,logged,
+11719,Experiment,started
+11722,Stimulus,presented,0
+12724,Stimulus,presented,1
+12724,Stimulus,presented,0
+16707,Keyboard,received,13,wait
+16707,Experiment,ended
+16730,Stimulus,presented,3

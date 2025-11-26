@@ -1,0 +1,19 @@
+#Expyriment 1.0.0 (Python 3.10.7), .xpe-file, coding: cp1251
+#date: Sat Oct 04 2025 13:13:45
+#sha1: 0c62c9
+#modules: 
+#display: size=(800, 600), window_mode=False, opengl=2
+#os: uname_result(system='Windows', node='DESKTOP-GK5OCTG', release='10', version='10.0.19044', machine='AMD64')
+Time,Type,Event,Value,Detail,Detail2
+13626,design,log,
+#design: #exp: Reaction Time Demo
+#design: block_cnt,block_id,trial_cnt,trial_id
+13626,design,logged,
+13626,Experiment,started
+13631,Stimulus,presented,1
+14637,Keyboard,received,13,wait
+14639,Stimulus,presented,2
+15185,Keyboard,received,13,wait
+15187,Stimulus,presented,3
+15188,stderr,received,'Traceback (most recent call last):\n  File "c:\\Users\\HP\\cogSUP\\cogsup-prog\\Week-2\\Exercises\\test.py", line 24, in <module>\n    xpy.misc.clock.wait(2000)\nAttributeError: module \'expyriment.misc\' has no attribute \'clock\'. Did you mean: \'Clock\'?'
+15197,Data,saved

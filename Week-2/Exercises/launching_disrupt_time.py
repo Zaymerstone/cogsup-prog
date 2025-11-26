@@ -35,7 +35,7 @@ while square_red.position[0] < target_x_red:
     exp.clock.wait(wait_time)
 
 # Introduce a delay to disrupt sense of causality (anything above 100ms will disrupt)
-exp.clock.wait(2000)
+exp.clock.wait(120)
 
 while square_green.position[0] < target_x_green:
     # update position

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/jspsych@8.0.2"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-slider-response@2.0.0"></script>
+    <link
+      href="https://unpkg.com/jspsych@8.0.2/css/jspsych.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body></body>
+
+  <script>
+    const jsPsych = initJsPsych();
+
+    const sliderTrial = {
+      type: jsPsychHtmlSliderResponse,
+      stimulus: "<p>Please rate your mood:</p>",
+      min: 0,
+      max: 100,
+      start: 50,
+      step: 1,
+      labels: ["Bad", "Good"],
+      require_movement: false,
+      on_load: function () {
+        const slider = document.querySelector("input[type='range']");
+        slider.disabled = true;
+      },
+    };
+
+    // simple helloWorld function that prints to the console and the page
+    function helloWorld() {
+      console.log("Hello world");
+      const p = document.createElement("p");
+      p.textContent = "Hello world";
+      document.body.appendChild(p);
+    }
+
+    // call it once so you can see the output immediately
+    helloWorld();
+
+    jsPsych.run([sliderTrial]);
+  </script>
+</html>
